@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Catatan Apps',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        backgroundColor: Color.fromRGBO(32, 32, 34, 50),
+        // primarySwatch: Color.fromRGBO(32, 32, 34, 50),
+        primaryColor: Color.fromRGBO(32, 32, 34, 50),
       ),
       home: SplashScreen(),
     );

@@ -13,6 +13,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   FirebaseAuthServices fbServices = FirebaseAuthServices();
+   bool showPassword = true;
 
   register() async {
     fbServices
@@ -30,37 +31,101 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+       body:Container(
+        width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.all(8.0),
+        color: Color.fromRGBO(32, 32, 34, 50),     //fromRGBO(180, 189, 191, 2)
         child: Column(
-          children: [
-            Text('register'),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              width: 100,
+              height: 100,
+              decoration: BoxDecoration(color: Colors.white,    //fromRGBO(125, 135, 135, 50)
+              shape: BoxShape.circle
+              ),
+              child: Center(
+                child: Icon(Icons.manage_accounts, size: 85, color: Colors.black87),
+                ),
+            ),
+
             SizedBox(
               height: 30,
             ),
-            TextField(
+
+            Text('Register Account', style: TextStyle(fontSize: 20, color: Colors.black87),),
+
+            SizedBox(
+              height: 20,
+            ),
+
+
+            TextFormField(
               controller: emailController,
               decoration: InputDecoration(
-                labelText: 'email',
-                hintText: 'masukkan email',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(20),
                 ),
+                  
+                  prefixIcon: Icon(Icons.contact_mail, size: 30, color: Colors.black87,),
+                  hintText: "Masukkan Email",
+                  hintStyle: TextStyle(color: Colors.black87,),
+                  labelText: "Email",
+                  labelStyle: TextStyle(color: Colors.black87,),
+                  focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.white,)       //fromRGBO(135, 135, 135, 50)
+                  ),
+                  
+                  
               ),
             ),
+
+
             SizedBox(
-              height: 10,
+              height: 20,
             ),
-            TextField(
+
+            
+            TextFormField(
+              
               controller: passwordController,
+              obscureText: showPassword,
+              obscuringCharacter: "*",
               decoration: InputDecoration(
-                labelText: 'password',
-                hintText: 'masukkan password',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(20),
                 ),
+                
+                  prefixIcon: Icon(Icons.key, size: 30, color: Colors.black87,),
+                  hintText: "Masukkan Password",
+                  hintStyle: TextStyle(color: Colors.black87,),
+                  labelText: "Password",
+                  labelStyle: TextStyle(color: Colors.black87,),
+                  suffixIcon: InkWell(
+                    child: Icon(showPassword ? Icons.visibility : Icons.visibility_off,size: 25 , color: Colors.black87,),
+                    onTap: () {
+                      if (showPassword) 
+                      {setState(() {
+                        showPassword = false;
+                      });
+                        
+                      }else{
+                        setState(() {
+                          showPassword = true;
+                        });
+                      }
+                    },
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(color: Colors.white,)            //fromRGBO(135, 135, 135, 50)
+                  ),
+                  
               ),
             ),
+
+
             SizedBox(
               height: 10,
             ),
@@ -68,7 +133,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               onPressed: () {
                 register();
               },
-              child: Text('Register'),
+              child: Text("REGISTER", style: TextStyle(fontSize: 10, color: Colors.white), 
+                    ),
             ),
             SizedBox(
               height: 10,
@@ -77,7 +143,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Sudah punya akun? Logn disini'),
+              child: Text('Sudah Punya Akun? Login disini', style: TextStyle(fontSize: 10, color: Colors.blueAccent,),
+              ),
             ),
           ],
         ),

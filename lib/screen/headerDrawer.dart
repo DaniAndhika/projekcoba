@@ -1,15 +1,12 @@
 import "package:flutter/material.dart";
 import 'package:catatan_apps/screen/login_screen.dart';
-
 class MyHeaderDrawer extends StatefulWidget {
   const MyHeaderDrawer({Key? key}) : super(key: key);
-
   
 @override
 _MyHeaderDrawerState createState() => _MyHeaderDrawerState();
 
 }
-
 class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
   @override
   Widget build(BuildContext context) {
@@ -23,15 +20,10 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
         children: [
           Container(
             child: Icon(Icons.person_pin, size: 85, color: Colors.white),
-            //child: Image(image: AssetImage("assets/images/profil.jpg"),),
             margin: const EdgeInsets.only(bottom: 10.0),
             height: 70.0,
             decoration: const BoxDecoration(
               shape: BoxShape.rectangle,
-              
-              // image: DecorationImage(
-              //   image: AssetImage("assets/images/hai.GIF"),
-              //   ),
             ),
           ),
           const Text("DANI ANDHIKA AGISTAMA", 
@@ -39,7 +31,6 @@ class _MyHeaderDrawerState extends State<MyHeaderDrawer> {
           const Text("200101123", style: TextStyle(color: Colors.white, fontSize: 16 ),),
         ],
       ),
-
     );
   }
 }

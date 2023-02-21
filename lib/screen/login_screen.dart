@@ -129,71 +129,19 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
 
-            // TextField(
-            //   controller: emailController,
-            //   decoration: InputDecoration(
-            //     labelText: 'email',
-            //     hintText: 'masukkan email',
-            //     border: OutlineInputBorder(
-            //       borderRadius: BorderRadius.circular(15),
-                
-            //     ),
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 10,
-            // ),
-            // TextField(
-            //   obscureText: true,
-            //   controller: passwordController,
-            //   decoration: InputDecoration(
-            //     labelText: 'password',
-            //     hintText: 'masukkan password',
-            //     border: OutlineInputBorder(
-            //       borderRadius: BorderRadius.circular(15),
-            //     ),
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: 10,
-            // ),
-
+            
             SizedBox(
               height: 20,
             ),
 
-            // Card(
-            //   color: Colors.black87,
-            //   elevation: 5,
-            //   child: Container(
-            //     height: 40,
-            //     child: InkWell(
-            //       splashColor:Colors.white,
-            //       onTap: () {},
-            //       child: Center(
-            //         child: Text("LOGIN", style: TextStyle(fontSize: 20, color: Color.white),),
-            //       ),
-            //     ),
-            //   ),
-            // )
+            
             ElevatedButton(
               onPressed: () {
                 login();
               },
-              // child: Text("Login" , style: TextStyle(fontSize: 10, color: Colors.white),),
-              // child: Container(
-              // color: Colors.black87,
-              // height: 20,
-              //   child: InkWell(
-              //     splashColor: Colors.white,
-              //     onTap: () {},
-              //  child: Center(
-                
-            
                     child: Text("LOGIN", style: TextStyle(fontSize: 10, color: Colors.white), 
                     ),
-              //     ),
-                //  ),
+             
             ),
             SizedBox(
               height: 10,

@@ -75,20 +75,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                   borderSide: BorderSide(color: Colors.white,)       //fromRGBO(135, 135, 135, 50)
-                  ),
-                  
-                  
+                  ), 
               ),
             ),
-
 
             SizedBox(
               height: 20,
             ),
-
             
-            TextFormField(
-              
+            TextFormField(              
               controller: passwordController,
               obscureText: showPassword,
               obscuringCharacter: "*",

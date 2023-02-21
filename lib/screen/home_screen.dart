@@ -9,11 +9,9 @@ import 'package:catatan_apps/screen/headerDrawer.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
   
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
   TextEditingController judulController = TextEditingController();
   TextEditingController isiController = TextEditingController();
@@ -53,8 +51,8 @@ class _HomeScreenState extends State<HomeScreen> {
              ListTile(
               leading: const Icon(Icons.school),
               title: const Text ("Universitas Duta Bangsa Surakarta"),
-             
              ),
+
              ListTile(
               leading: const Icon(Icons.email),
               title: const Text("daniandhika9@gmail.com"),
@@ -67,8 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
               leading: const Icon(Icons.home),
               title: const Text ("Gunungkidul , Yogyakarta"),
              ),
-
-
             ],
           ),
         ),
@@ -82,11 +78,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Icon(Icons.add),
       ),
       body: 
-      FutureBuilder<QuerySnapshot>(
-               
+      FutureBuilder<QuerySnapshot>(   
           future: getData(),
           builder: (context, snapshot) { 
-            //
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(child: CircularProgressIndicator());
             } else if (snapshot.connectionState == ConnectionState.done) {
@@ -132,7 +126,6 @@ class _HomeScreenState extends State<HomeScreen> {
           }),
     );
   }
-
   addCatatan(BuildContext context) async {
     var hasil = await showDialog(
       context: context,
